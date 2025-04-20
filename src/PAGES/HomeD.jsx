@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Send } from 'lucide-react';
+import { motion } from 'motion/react';
 
 function HomeD() {
   const [input, setInput] = useState("");
@@ -18,24 +19,50 @@ function HomeD() {
   };
 
   return (
-    <div className="h-[300px] w-full flex flex-col justify-end p-4">
-      <div className="relative w-full max-w-3xl mx-auto">
-        <textarea
-          rows="1"
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          onKeyDown={handleKeyDown}
-          placeholder="Ask anything"
-          className="w-full resize-none rounded-3xl p-8 h-[100px] text-white bg-[#2c2c2c] border border-gray-600 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white/20"
-        />
-        <button
-          onClick={handleSend}
-          className="absolute right-3 top-1/2 -translate-y-1/2 p-2 bg-white rounded-full flex items-center justify-center hover:bg-gray-300 transition"
-        >
-          <Send className="w-5 h-5 text-orange-400" />
-        </button>
-      </div>
+    <>
+    <div className="h-[300px]  w-full flex flex-row justify-around p-4">
+      <motion.div
+      initial={{scale:0,opacity:0}}
+      whileInView={{scale:1,opacity:1 , transition:{duration:0.5}}}
+      whileHover={{ scale:1.1 }}
+      whileTap={{scale:0.8}}
+       className="w-[300px] h-[250px] cursor-pointer rounded-xl bg-[#2c2c2c] border border-gray-600"></motion.div>
+      <motion.div
+            initial={{scale:0,opacity:0}}
+            whileInView={{scale:1,opacity:1 , transition:{duration:0.5}}}
+            whileHover={{ scale:1.1 }}
+            whileTap={{scale:0.8}}
+             className="w-[300px] cursor-pointer h-[250px] rounded-xl bg-[#2c2c2c] border border-gray-600"></motion.div>
+      
     </div>
+        <div className="h-[300px]  w-full flex flex-row gap-4 justify-evenly p-5">
+<div className="flex flex-col">
+<motion.div
+        initial={{scale:0,opacity:0}}
+        whileInView={{scale:1,opacity:1 , transition:{duration:0.5}}}
+        whileHover={{ scale:1.1 }}
+        whileTap={{scale:0.8}}
+         className="w-[300px] h-[100px] cursor-pointer rounded-xl bg-[#2c2c2c] border border-gray-600">
+          
+         </motion.div>
+         <motion.div
+        initial={{scale:0,opacity:0}}
+        whileInView={{scale:1,opacity:1 , transition:{duration:0.5}}}
+        whileHover={{ scale:1.1 }}
+        whileTap={{scale:0.8}}
+         className="w-[300px] h-[150px] cursor-pointer rounded-xl bg-[#2c2c2c] border border-gray-600">
+          
+         </motion.div>
+</div>
+        <motion.div
+              initial={{scale:0,opacity:0}}
+              whileInView={{scale:1,opacity:1 , transition:{duration:0.5}}}
+              whileHover={{ scale:1.1 }}
+              whileTap={{scale:0.8}}
+               className="w-[400px] cursor-pointer h-[250px] rounded-xl bg-[#2c2c2c] border border-gray-600"></motion.div>
+        
+      </div>
+      </>
   );
 }
 

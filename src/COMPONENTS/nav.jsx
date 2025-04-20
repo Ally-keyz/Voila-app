@@ -50,7 +50,7 @@ const Navbar = () => {
           <div className="flex-shrink-0 flex items-center">
             <div className="flex items-center space-x-2">
               <span className="text-2xl font-bold text-orange-300 ">
-                Libria
+                <img src="/logo.png" alt="voila" className="w-[180px] h-[150px]" srcset="" />
               </span>
             </div>
           </div>
